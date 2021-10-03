@@ -1,0 +1,65 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#page_title {
+    text-align: center;
+    color: #252525;
+}
+
+.navigation {
+    width: 600px;
+    height: 50px;
+}
+.navigation a{
+    float: left;
+    display: block;
+    color: #252525;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 3px solid transparent;
+    width: 20%;
+}
+
+.navigation a:hover{
+    border-bottom: 3px solid #85ACEE;
+}
+.navigation a.active{
+    background-color: #85ACEE;
+}
+
+.navigation a.active:hover{
+    background-color: #9DBCF1;
+    border-bottom: 3px solid #9DBCF1;
+}
+
+.main_vision {
+    margin-top: 0.5em;
+}
+
+#map{
+    width: 66%;
+    height: 500px;
+    display: block;
+    float: left;
+}
+
+#filters {
+    display: block;
+    float: right;
+    width: 32%;
+    height: 500px;
+    padding-left: 0.5em;
+}
+
+#filters h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.ratings .price{
+    margin-top: 0.5em;
+}

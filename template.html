@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet"/>
+    <script type="text/javascript" src="Chart.js/Chart.min.js"></script>
+    <script type="text/javascript" src="Chart.js/samples/utils.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 id="page_title">Template Title</h1>
+
+    <div class="navigation">
+        <a href="#" class="active">Landmarks</a> <!-- 当前页面 -->
+        <a href="hotels.html">Hotels</a> <!-- 其他页面 -->
+    </div>
+
+    <div class="main_vision">
+        <div id="map"></div>
+        <div id="filters">
+            <div class="transportation">
+                <h3>Transportation</h3>
+                <input type="checkbox" name="train">
+                <label for="train">Train</label><br>
+                <input type="checkbox" name="bus">
+                <label for="bus">Bus</label><br>
+                <input type="checkbox" name="walk">
+                <label for="walk">Walk</label><br>
+                <input type="checkbox" name="bicycle">
+                <label for="bicycle">Bicycle</label><br>
+                <input type="checkbox" name="fastest">
+                <label for="fastest">Fastest</label><br>
+                <input type="checkbox" name="lesswalk">
+                <label for="lesswalk">Less Walk</label><br>
+            </div>
+            <div class="ratings">
+                <h3>Ratings</h3>
+                <input type="range" min="0" max="5" style="width: 200px">
+            </div>
+            <div class="ratings">
+                <h3>Price</h3>
+                <input type="range" min="0" max="5" style="width: 200px">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/mapbox.js"></script>
+</body>
+</html>
