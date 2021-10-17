@@ -1,0 +1,532 @@
+var hotel_data = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96818815422762,
+                        -37.81307042598313
+                    ]
+                },
+                "properties": {
+                    "rank": 1,
+                    "name": "QT Melbourne",
+                    "address": "133 Russell St, Melbourne, Victoria 3000 Australia",
+                    "price": 289,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97646473888545,
+                        -37.81125252400837
+                    ]
+                },
+                "properties": {
+                    "rank": 2,
+                    "name": "Park Hyatt Melbourne",
+                    "address": "1 Parliament Square off Parliament Place, Melbourne, Victoria 3002 Australia",
+                    "price": 486,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9657381695701,
+                        -37.82048692797099
+                    ]
+                },
+                "properties": {
+                    "rank": 3,
+                    "name": "The Langham, Melbourne",
+                    "address": "1 Southgate Ave, Melbourne, Victoria 3006 Australia",
+                    "price": 236,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97201362724067,
+                        -37.810432826354145
+                    ]
+                },
+                "properties": {
+                    "rank": 4,
+                    "name": "Ovolo Laneways",
+                    "address": "19 Little Bourke St, Melbourne, Victoria 3000 Australia",
+                    "price": 206,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9614926118985,
+                        -37.808469233169006
+                    ]
+                },
+                "properties": {
+                    "rank": 5,
+                    "name": "Avani Melbourne Central Residences",
+                    "address": "60 A'Beckett St, Melbourne, Victoria 3000 Australia",
+                    "price": 232,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95244648306274,
+                        -37.802887506435205
+                    ]
+                },
+                "properties": {
+                    "rank": 6,
+                    "name": "Q Squared Serviced Apartments",
+                    "address": "115 Chetwynd Street, Melbourne, Victoria 3051 Australia",
+                    "price": 300,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95613942539214,
+                        -37.81007014913188
+                    ]
+                },
+                "properties": {
+                    "rank": 7,
+                    "name": "Radisson on Flagstaff Gardens Melbourne",
+                    "address": "380 William Street, Melbourne, Victoria 3000 Australia",
+                    "price": 226,
+                    "rating": 5.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97258218121448,
+                        -37.81254518389523
+                    ]
+                },
+                "properties": {
+                    "rank": 8,
+                    "name": "Sheraton Melbourne Hotel",
+                    "address": "27 Little Collins St, Melbourne, Victoria 3000 Australia",
+                    "price": 259,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95807536772156,
+                        -37.823224810623664
+                    ]
+                },
+                "properties": {
+                    "rank": 9,
+                    "name": "Crown Metropol Melbourne",
+                    "address": "8 Whiteman St, Melbourne, Victoria 3006 Australia",
+                    "price": 268,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97004068121458,
+                        -37.81503648990099
+                    ]
+                },
+                "properties": {
+                    "rank": 10,
+                    "name": "Grand Hyatt Melbourne",
+                    "address": "123 Collins Street, Melbourne, Victoria 3000 Australia",
+                    "price": 349,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.92110809470677,
+                        -37.786541263294374
+                    ]
+                },
+                "properties": {
+                    "rank": 11,
+                    "name": "Quest Flemington Central",
+                    "address": "1 Ascot Vale Road Flemington, Melbourne, Victoria 3031 Australia",
+                    "price": 198,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95113865422815,
+                        -37.824654986066754
+                    ]
+                },
+                "properties": {
+                    "rank": 12,
+                    "name": "Pan Pacific Melbourne",
+                    "address": "2 Convention Centre Place South Wharf, Melbourne, Victoria 3006 Australia",
+                    "price": 328,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9710316523788,
+                        -37.81086182748679
+                    ]
+                },
+                "properties": {
+                    "rank": 13,
+                    "name": "Lancemore Crossley St.",
+                    "address": "51 Little Bourke St, Melbourne, Victoria 3000 Australia",
+                    "price": 287,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97956966772125,
+                        -37.816531793506
+                    ]
+                },
+                "properties": {
+                    "rank": 14,
+                    "name": "Quest Jolimont",
+                    "address": "153-155 Wellington Pde S, Melbourne, Victoria 3002 Australia",
+                    "price": 162,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.94793844073442,
+                        -37.818129722017105
+                    ]
+                },
+                "properties": {
+                    "rank": 15,
+                    "name": "Quest Docklands",
+                    "address": "750 Bourke St Docklands, Melbourne, Victoria 3008 Australia",
+                    "price": 213,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95179812354345,
+                        -37.81344303782147
+                    ]
+                },
+                "properties": {
+                    "rank": 16,
+                    "name": "Atlantis Hotel",
+                    "address": "300 Spencer St, Melbourne, Victoria 3000 Australia",
+                    "price": 106,
+                    "rating": 3.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9485958272405,
+                        -37.805803490888216
+                    ]
+                },
+                "properties": {
+                    "rank": 17,
+                    "name": "Miami Hotel Melbourne",
+                    "address": "13 Hawke St, Melbourne, Victoria 3003 Australia",
+                    "price": 227,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9612446793655,
+                        -37.806702179966486
+                    ]
+                },
+                "properties": {
+                    "rank": 18,
+                    "name": "ibis Melbourne Hotel and Apartments",
+                    "address": "15-21 Therry St, Melbourne, Victoria 3000 Australia",
+                    "price": 95,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96717922724108,
+                        -37.82004069930792
+                    ]
+                },
+                "properties": {
+                    "rank": 19,
+                    "name": "Quay West Suites Melbourne",
+                    "address": "26 Southgate Ave Southbank, Melbourne, Victoria 3006 Australia",
+                    "price": 296,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97069521189863,
+                        -37.811057956464296
+                    ]
+                },
+                "properties": {
+                    "rank": 20,
+                    "name": "Rydges Melbourne",
+                    "address": "186 Exhibition St, Melbourne, Victoria 3000 Australia",
+                    "price": 165,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96210845422738,
+                        -37.80722752426577
+                    ]
+                },
+                "properties": {
+                    "rank": 21,
+                    "name": "Milano Serviced Apartments",
+                    "address": "8 Franklin St, Melbourne, Victoria 3000 Australia",
+                    "price": 116,
+                    "rating": 3.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95990217141818,
+                        -37.80732084788506
+                    ]
+                },
+                "properties": {
+                    "rank": 22,
+                    "name": "Jasper Boutique Hotel",
+                    "address": "489 Elizabeth St, Melbourne, Victoria 3000 Australia",
+                    "price": 135,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9547961486819,
+                        -37.81967132865721
+                    ]
+                },
+                "properties": {
+                    "rank": 23,
+                    "name": "The Great Southern Hotel Melbourne",
+                    "address": "44 Spencer St, Melbourne, Victoria 3000 Australia",
+                    "price": 121,
+                    "rating": 3.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96335653888525,
+                        -37.80540292028681
+                    ]
+                },
+                "properties": {
+                    "rank": 24,
+                    "name": "Arrow On Swanston",
+                    "address": "488 Swanston St Carlton, Melbourne, Victoria 3053 Australia",
+                    "price": 116,
+                    "rating": 3.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96035884073444,
+                        -37.81808104654815
+                    ]
+                },
+                "properties": {
+                    "rank": 25,
+                    "name": "W Melbourne",
+                    "address": "408 Flinders Lane, Melbourne, Victoria 3000 Australia",
+                    "price": 439,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95708145237893,
+                        -37.810030511758896
+                    ]
+                },
+                "properties": {
+                    "rank": 26,
+                    "name": "Pegasus Apart'Hotel",
+                    "address": "206 A'Beckett Street, Melbourne, Victoria 3000 Australia",
+                    "price": 132,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96302993703702,
+                        -37.81556858864808
+                    ]
+                },
+                "properties": {
+                    "rank": 27,
+                    "name": "Causeway 353 Hotel",
+                    "address": "353 Little Collins St, Melbourne, Victoria 3000 Australia",
+                    "price": 135,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97362806772117,
+                        -37.81529147975209
+                    ]
+                },
+                "properties": {
+                    "rank": 28,
+                    "name": "Hotel Lindrum Melbourne - MGallery by Sofitel",
+                    "address": "26 Flinders St, Melbourne, Victoria 3000 Australia",
+                    "price": 336,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        145.12343671189888,
+                        -37.81681166189265
+                    ]
+                },
+                "properties": {
+                    "rank": 29,
+                    "name": "City Edge Box Hill Apartment Hotel",
+                    "address": "1 Elland Ave Box Hill, Melbourne, Victoria 3128 Australia",
+                    "price": 124,
+                    "rating": 3.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.98533695607628,
+                        -37.81059259816474
+                    ]
+                },
+                "properties": {
+                    "rank": 30,
+                    "name": "Albert Heights Serviced Apartments",
+                    "address": "83 Albert St, Melbourne, Victoria 3002 Australia",
+                    "price": 310,
+                    "rating": 3.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96002056846487,
+                        -37.82223630265993
+                    ]
+                },
+                "properties": {
+                    "rank": 31,
+                    "name": "Crown Towers Melbourne",
+                    "address": "8 Whiteman St, Melbourne, Victoria 3006 Australia",
+                    "price": 339,
+                    "rating": 4.5
+                }
+            }
+        ]
+    }

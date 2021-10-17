@@ -1,0 +1,515 @@
+var cafe_data = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95821063537312,
+                        -37.814609767594476
+                    ]
+                },
+                "properties": {
+                    "rank": 1,
+                    "name": "Patricias Coffee Brewers",
+                    "address": "Cnr Little Bourke & Little William St., Melbourne, Victoria Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96162307677477,
+                        -37.8148462195039
+                    ]
+                },
+                "properties": {
+                    "rank": 2,
+                    "name": "Hopetoun Tea Rooms",
+                    "address": "421 Bourke St Hopetoun House, Melbourne, Victoria 3000 Australia",
+                    "price": 3,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96207515265738,
+                        -37.813500096006194
+                    ]
+                },
+                "properties": {
+                    "rank": 3,
+                    "name": "Brother Baba Budan",
+                    "address": "359 Little Bourke St Cbd, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96572230628232,
+                        -37.81594929521874
+                    ]
+                },
+                "properties": {
+                    "rank": 4,
+                    "name": "Ganache Chocolate",
+                    "address": "245 Collins St, Melbourne, Victoria 3000 Australia",
+                    "price": 3,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9663257827951,
+                        -37.81538034775724
+                    ]
+                },
+                "properties": {
+                    "rank": 5,
+                    "name": "Koko Black Chocolate",
+                    "address": "52 Collins St, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96615982073592,
+                        -37.81678710988773
+                    ]
+                },
+                "properties": {
+                    "rank": 6,
+                    "name": "Dukes Coffee Roasters",
+                    "address": "247 Flinders Lane, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.959034854947,
+                        -37.80285536579737
+                    ]
+                },
+                "properties": {
+                    "rank": 7,
+                    "name": "Seven Seeds",
+                    "address": "114 Berkley Street Carlton, Melbourne, Victoria Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96213913400936,
+                        -37.81386405201779
+                    ]
+                },
+                "properties": {
+                    "rank": 8,
+                    "name": "Manchester Press",
+                    "address": "8 Rankins Lane, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96828857826713,
+                        -37.79765494510638
+                    ]
+                },
+                "properties": {
+                    "rank": 9,
+                    "name": "Vertue Coffee Roasters",
+                    "address": "8 Raffa Place, Melbourne, Victoria 3053 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.964181533385,
+                        -37.81491023028417
+                    ]
+                },
+                "properties": {
+                    "rank": 10,
+                    "name": "Caffe e Torta",
+                    "address": "314 Little Collins St, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9851781391939,
+                        -37.802304814763275
+                    ]
+                },
+                "properties": {
+                    "rank": 11,
+                    "name": "Proud Mary Cafe",
+                    "address": "172 Oxford St, Collingwood, Yarra, Victoria 3066 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97814888825064,
+                        -37.79477599621158
+                    ]
+                },
+                "properties": {
+                    "rank": 12,
+                    "name": "Industry Beans",
+                    "address": "70-76 Westgarth St, Fitzroy, Yarra, Victoria 3065 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97336662217592,
+                        -37.812477127296674
+                    ]
+                },
+                "properties": {
+                    "rank": 13,
+                    "name": "Cafe Excello",
+                    "address": "99 Spring St, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9609890011651,
+                        -37.81121643927395
+                    ]
+                },
+                "properties": {
+                    "rank": 14,
+                    "name": "Shortstop Coffee & Donuts ",
+                    "address": "12 Sutherland St, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96445399254225,
+                        -37.81491932360181
+                    ]
+                },
+                "properties": {
+                    "rank": 15,
+                    "name": "Laurent Bakery",
+                    "address": "306 Little Collins St, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95804557798562,
+                        -37.80617974892708
+                    ]
+                },
+                "properties": {
+                    "rank": 16,
+                    "name": "Market Lane Coffee",
+                    "address": "109-111 Therry St, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9658263317985,
+                        -37.81757116121335
+                    ]
+                },
+                "properties": {
+                    "rank": 17,
+                    "name": " Little Cupcakes",
+                    "address": "Degraves Street Shop 7, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96848770399149,
+                        -37.80921908100318
+                    ]
+                },
+                "properties": {
+                    "rank": 18,
+                    "name": "The League of Honest Coffee",
+                    "address": "8 Exploration Lane, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97327179172422,
+                        -37.812566572148114
+                    ]
+                },
+                "properties": {
+                    "rank": 19,
+                    "name": "Coffee Exchange",
+                    "address": "Shops 9 1 Little Collins St, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95522105590643,
+                        -37.820492302359504
+                    ]
+                },
+                "properties": {
+                    "rank": 20,
+                    "name": "Olivier's Cafe",
+                    "address": "16 Spencer St, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.93969646529504,
+                        -37.84160873304111
+                    ]
+                },
+                "properties": {
+                    "rank": 21,
+                    "name": "Noisette",
+                    "address": "84 Bay St, Melbourne, Victoria 3207 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95059820840757,
+                        -37.804412772874244
+                    ]
+                },
+                "properties": {
+                    "rank": 22,
+                    "name": "Roasting Warehouse",
+                    "address": "19-21 Leveson St, Melbourne, Victoria 3051 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96597384804156,
+                        -37.81753582760064
+                    ]
+                },
+                "properties": {
+                    "rank": 23,
+                    "name": "Cup of Truth",
+                    "address": "12 Campbell Arc Degraves Street Subway, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 5.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96580676867802,
+                        -37.81686272098215
+                    ]
+                },
+                "properties": {
+                    "rank": 24,
+                    "name": "Journal",
+                    "address": "Shop 1 G 253 Flinders Lane Lower Ground Floor 1, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96380727969066,
+                        -37.81339114083856
+                    ]
+                },
+                "properties": {
+                    "rank": 25,
+                    "name": "Brunetti Oro 1956 - Myer Melbourne",
+                    "address": "314-336 Bourke St, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97311956645987,
+                        -37.8125538502126
+                    ]
+                },
+                "properties": {
+                    "rank": 26,
+                    "name": "Little Bean Blue",
+                    "address": "15 Little Collins St, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96780281962614,
+                        -37.81629367097311
+                    ]
+                },
+                "properties": {
+                    "rank": 27,
+                    "name": "Chapter House Coffee",
+                    "address": "4/209 Flinders Lane, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97034610400138,
+                        -37.81643860951312
+                    ]
+                },
+                "properties": {
+                    "rank": 28,
+                    "name": "Cento Mani",
+                    "address": "140 Flinders St, Melbourne, Victoria 3000 Australia",
+                    "price": 2,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96367395220628,
+                        -37.77492403544092
+                    ]
+                },
+                "properties": {
+                    "rank": 29,
+                    "name": "Toby's Estate",
+                    "address": "325 Flinders Lane, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96867714065223,
+                        -37.81363432078844
+                    ]
+                },
+                "properties": {
+                    "rank": 30,
+                    "name": "Brioche by Philip",
+                    "address": "99 Queen St, Melbourne, Victoria 3000 Australia",
+                    "price": 1,
+                    "rating": 4.5
+                }
+            }
+        ]
+    }
