@@ -33,6 +33,36 @@ function getMoney(num){
     return output;
 }
 
+function rating_slider_change(values) {
+    var min, max;
+    min = parseFloat(values.split(", ")[0]);
+    max = parseFloat(values.split(', ')[1]);
+    map.setFilter('points', ['>', ['get', 'rating'], min], ["<=", ['get', 'rating'], max]);
+}
+
+function price_slider_change(values) {
+    var min, max;
+    min = parseFloat(values.split(", ")[0]);
+    max = parseFloat(values.split(', ')[1]);
+    map.setFilter('points', ['>', ['get', 'price'], min], ["<=", ['get', 'price'], max]);
+}
+
+function add_rankings() {
+    var ranking_list = document.getElementById('rankings');
+    var rank_list = "<h3>Rankings: </h3><div class='cards' style='overflow: auto; max-height: 320px;'>";
+    for (var data of cafe_data['features']) {
+        rank_list += '<div class="rankingCard" onclick="flyTo(' + data["geometry"]["coordinates"] + ')">' + data['properties']['rank'].toString() + '.\t' + data['properties']['name'] + '</div>';
+    }
+    rank_list += "</div>"
+    ranking_list.innerHTML = rank_list;
+}
+
+function flyTo(x, y) {
+    var coordinates = [x, y]
+    map.flyTo({center: coordinates});
+}
+
+
 map.on('load', () => {
 // Add an image to use as a custom marker
     map.loadImage(

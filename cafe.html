@@ -12,8 +12,10 @@
     <script type="text/javascript" src="Chart.js/samples/utils.js"></script>
     <!-- FontAwesome Icons -->
     <script defer src="js/fontawesome/js/all.js"></script>
+    <!-- Metro 4 Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
 </head>
-<body>
+<body onload="add_rankings();">
 <div class="container">
     <h1 id="page_title">Cafes</h1>
 
@@ -27,33 +29,29 @@
     <div class="main_vision">
         <div id="map"></div>
         <div id="filters">
-            <div class="transportation">
-                <h3>Transportation</h3>
-                <input type="checkbox" name="train">
-                <label for="train">Train</label><br>
-                <input type="checkbox" name="bus">
-                <label for="bus">Bus</label><br>
-                <input type="checkbox" name="walk">
-                <label for="walk">Walk</label><br>
-                <input type="checkbox" name="bicycle">
-                <label for="bicycle">Bicycle</label><br>
-                <input type="checkbox" name="fastest">
-                <label for="fastest">Fastest</label><br>
-                <input type="checkbox" name="lesswalk">
-                <label for="lesswalk">Less Walk</label><br>
-            </div>
             <div class="ratings">
                 <h3>Ratings</h3>
-                <input type="range" min="0" max="5" style="width: 200px">
+                <input data-role="doubleslider" data-hint="true"
+                       data-hint-always="false" data-min="0" data-max="5"
+                       data-accuracy="0.5" data-cls-complete="bg-lightBrown"
+                       data-cls-marker="bg-darkSteel border-50 custom-marker"
+                       onchange="rating_slider_change(this.value)">
             </div>
-            <div class="ratings">
+            <div class="price">
                 <h3>Price</h3>
-                <input type="range" min="0" max="5" style="width: 200px">
+                <input data-role="doubleslider" data-hint="true"
+                       data-hint-always="false" data-min="0" data-max="5"
+                       data-accuracy="0" data-cls-complete="bg-lightBrown"
+                       data-cls-marker="bg-darkSteel border-50 custom-marker"
+                       onchange="price_slider_change(this.value)">
             </div>
+        </div>
+        <div id="rankings">
         </div>
     </div>
 </div>
 
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
 <script type="text/javascript" src="data/cafe_geojson.geojson"></script>
 <script type="text/javascript" src="js/cafe_mapbox.js"></script>
 </body>

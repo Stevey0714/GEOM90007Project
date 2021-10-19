@@ -1,5 +1,6 @@
 .container {
-    max-width: 1200px;
+    /*max-width: 1200px;*/
+    max-width: 100% !important;
     margin: 0 auto;
 }
 
@@ -18,7 +19,7 @@
     color: #252525;
     text-align: center;
     padding: 12px 14px;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 16px;
     border-bottom: 3px solid transparent;
     width: 20%;
@@ -41,25 +42,58 @@
 }
 
 #map{
-    width: 66%;
+    width: 70%;
     height: 500px;
     display: block;
     float: left;
+    z-index: 0 !important;
 }
 
 #filters {
     display: block;
     float: right;
-    width: 32%;
-    height: 500px;
+    width: 29%;
+    height: 150px;
     padding-left: 0.5em;
+    /*background: #dddddd;*/
+    z-index: 1 !important;
+
 }
 
-#filters h3 {
+#filters h3, #rankings h3 {
     margin-top: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
+    font-size: 16pt;
+    color: #493219;
 }
 
 .ratings .price{
-    margin-top: 0.5em;
+    margin-top: 0.25em;
+}
+
+#rankings {
+    display: block;
+    float: right;
+    width: 29%;
+    padding-left: 0.5em;
+    /*background: #dddddd;*/
+    z-index: 1 !important;
+    margin-top: 0.5rem;
+}
+
+#rankings .rankingCard{
+    /*background-color: #dddddd;*/
+    height: 72px;
+    width: 400px;
+    margin: 0.5rem 0;
+    padding: 1.0em;
+    color: #493219;
+}
+
+#rankings .rankingCard:hover {
+    background-color: #9DBCF1;
+}
+
+.slider {
+    height: 2.0rem !important;
 }

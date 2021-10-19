@@ -15,7 +15,7 @@
     <!-- Metro 4 Stylesheet -->
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
 </head>
-<body onload="add_rankings();">
+<body>
 <div class="container">
     <h1 id="page_title">Restaurants</h1>
 
@@ -27,28 +27,26 @@
     </div>
 
     <div class="main_vision">
-        <div id="map"></div>
-        <div id="filters">
-            <div class="ratings">
-                <h3>Ratings</h3>
-                <input data-role="doubleslider" data-hint="true"
-                       data-hint-always="false" data-min="0" data-max="5"
-                       data-accuracy="0.5" data-cls-complete="bg-lightCyan"
-                       data-cls-marker="bg-darkBrown border-50 custom-marker"
-                       onchange="rating_slider_change(this.value)">
-            </div>
-            <div class="price">
-                <h3>Price</h3>
-                <input data-role="doubleslider" data-hint="true"
-                       data-hint-always="false" data-min="0" data-max="5"
-                       data-accuracy="0" data-cls-complete="bg-lightCyan"
-                       data-cls-marker="bg-darkBrown border-50 custom-marker"
-                       onchange="price_slider_change(this.value)">
+        <div id="map">
+            <div id="filters">restaurants.html
+                <div class="ratings">
+                    <h3>Ratings</h3>
+                    <input data-role="doubleslider" data-hint="true"
+                           data-hint-always="false" data-min="0" data-max="5"
+                           data-accuracy="0.5" data-cls-complete="bg-lightCyan"
+                           data-cls-marker="bg-darkBrown border-50 custom-marker"
+                           onchange="rating_slider_change(this.value)">
+                </div>
+                <div class="price">
+                    <h3>Price</h3>
+                    <input data-role="doubleslider" data-hint="true"
+                           data-hint-always="false" data-min="0" data-max="5"
+                           data-accuracy="0" data-cls-complete="bg-lightCyan"
+                           data-cls-marker="bg-darkBrown border-50 custom-marker"
+                           onchange="price_slider_change(this.value)">
+                </div>
             </div>
         </div>
-        <div id="rankings">
-        </div>
-
     </div>
 </div>
 

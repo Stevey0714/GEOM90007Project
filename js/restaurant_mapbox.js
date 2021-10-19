@@ -6,9 +6,9 @@ var map = new mapboxgl.Map({
     zoom: 14.0, // starting zoom
 });
 
-function getStars(num){
+function getStars(num) {
     var output = "<span>";
-    for (var i=0; i < 5; i++) {
+    for (var i = 0; i < 5; i++) {
         if (num >= 1) {
             output += '<i class="fas fa-star"></i>';
             num--;
@@ -23,7 +23,7 @@ function getStars(num){
     return output;
 }
 
-function getMoney(num){
+function getMoney(num) {
     var output = "<span>";
     while (num > 0) {
         output += '<i class="fas fa-dollar-sign"></i>';
@@ -31,6 +31,35 @@ function getMoney(num){
     }
     output += '</span>';
     return output;
+}
+
+function rating_slider_change(values) {
+    var min, max;
+    min = parseFloat(values.split(", ")[0]);
+    max = parseFloat(values.split(', ')[1]);
+    map.setFilter('points', ['>', ['get', 'rating'], min], ["<=", ['get', 'rating'], max]);
+}
+
+function price_slider_change(values) {
+    var min, max;
+    min = parseFloat(values.split(", ")[0]);
+    max = parseFloat(values.split(', ')[1]);
+    map.setFilter('points', ['>', ['get', 'price'], min], ["<=", ['get', 'price'], max]);
+}
+
+function add_rankings() {
+    var ranking_list = document.getElementById('rankings');
+    var rank_list = "<h3>Rankings: </h3><div class='cards' style='overflow: auto; max-height: 320px;'>";
+    for (var data of rest_data['features']) {
+        rank_list += '<div class="rankingCard" onclick="flyTo(' + data["geometry"]["coordinates"] + ')">' + data['properties']['rank'].toString() + '.\t' + data['properties']['name'] + '</div>';
+    }
+    rank_list += "</div>"
+    ranking_list.innerHTML = rank_list;
+}
+
+function flyTo(x, y) {
+    var coordinates = [x, y]
+    map.flyTo({center: coordinates});
 }
 
 map.on('load', () => {
@@ -72,9 +101,10 @@ map.on('click', 'points', function (e) {
     var outputString = '<div><h3 style="margin: 0 auto">' + rest_name + '</h3><br><b>Ranking: </b>' +
         rest_rank.toString() + '<br><b>Price: </b>' + getMoney(rest_price) + '<br><b>Rating: </b>' +
         getStars(rest_rating) + '<br><b>Cuisine: </b>'
-    for (var i=0; i < rest_cuisine.length - 1; i++) {
+    for (var i = 0; i < rest_cuisine.length - 1; i++) {
         outputString += rest_cuisine[i] + ", ";
     }
-    outputString += rest_cuisine[rest_cuisine.length-1] + "</div>";
+    outputString += rest_cuisine[rest_cuisine.length - 1] + "</div>";
     popup.setLngLat(e.lngLat).setHTML(outputString).addTo(map);
 });
+
