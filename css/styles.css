@@ -1,17 +1,21 @@
 .container {
-    /*max-width: 1200px;*/
-    max-width: 100% !important;
+    /*max-width: 1200px !important;*/
+    max-width: 80% !important;
     margin: 0 auto;
+    color: #493219;
+    font-family: 'M PLUS 1p', sans-serif;
 }
 
 #page_title {
     text-align: center;
-    color: #252525;
+    color: #493219;
+    font-weight: bold;
 }
 
 .navigation {
-    width: 600px;
+    width: 100%;
     height: 50px;
+    margin: 0 auto;
 }
 .navigation a{
     float: left;
@@ -20,9 +24,10 @@
     text-align: center;
     padding: 12px 14px;
     text-decoration: none !important;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     border-bottom: 3px solid transparent;
-    width: 20%;
+    width: 25%;
 }
 
 .navigation a:hover{
@@ -30,6 +35,8 @@
 }
 .navigation a.active{
     background-color: #85ACEE;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .navigation a.active:hover{
@@ -39,6 +46,7 @@
 
 .main_vision {
     margin-top: 0.5em;
+    height: 550px;
 }
 
 #map{
@@ -83,17 +91,36 @@
 
 #rankings .rankingCard{
     /*background-color: #dddddd;*/
-    height: 72px;
-    width: 400px;
+    /*height: 100%;*/
+    /*width: 400px;*/
+    width: 95%;
     margin: 0.5rem 0;
-    padding: 1.0em;
+    padding: 0.9em 1.0em;
     color: #493219;
+    text-wrap: normal;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    transition: all .18s ease;
 }
 
 #rankings .rankingCard:hover {
-    background-color: #9DBCF1;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
 .slider {
     height: 2.0rem !important;
+}
+
+.intro {
+    width: 100%;
+    /*height: 100%;*/
+    margin: 0.5em auto 1.0em;
+    border: 1px solid #333538;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+.intro p{
+    text-align: left;
+    color: #493219;
 }
