@@ -1,0 +1,386 @@
+{
+    "type": "geojson",
+    "data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96708325586758,
+                        -37.818177850892084
+                    ]
+                },
+                "properties": {
+                    "name": "Flinders Street Station",
+                    "address": "Flinders St, Melbourne VIC 3000, Australia",
+                    "img": "Flinders Street Station.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9647098543845,
+                        -37.82133317609602
+                    ]
+                },
+                "properties": {
+                    "name": "Eureka Skydeck",
+                    "address": "7 Riverside Quay, Southbank VIC 3006, Australia",
+                    "img": "Eureka Skydeck.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96893478124707,
+                        -37.82256833310692
+                    ]
+                },
+                "properties": {
+                    "name": "National Gallery of Victoria",
+                    "address": "180 St Kilda Rd, Melbourne VIC 3006, Australia",
+                    "img": "National Gallery of Victoria.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96768407057243,
+                        -37.81701671788019
+                    ]
+                },
+                "properties": {
+                    "name": "St Paul's Cathedral",
+                    "address": "Flinders St, Melbourne VIC 3000, Australia",
+                    "img": "St Paul's Cathedral.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97381026928025,
+                        -37.81104687975285
+                    ]
+                },
+                "properties": {
+                    "name": "Parliament House",
+                    "address": "Spring St, East Melbourne VIC 3002, Australia",
+                    "img": "Parliament House.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96449432695124,
+                        -37.814314479752305
+                    ]
+                },
+                "properties": {
+                    "name": "Bourke Street",
+                    "address": "231 Victoria Rd, Melbourne VIC 3078, Australia",
+                    "img": "Bourke Street.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96872316269267,
+                        -37.81148494364177
+                    ]
+                },
+                "properties": {
+                    "name": "Chinatown",
+                    "address": "Little Bourke St, Melbourne VIC 3000, Australia",
+                    "img": "Chinatown.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.95678499811552,
+                        -37.80757977975353
+                    ]
+                },
+                "properties": {
+                    "name": "Queen Victoria Market",
+                    "address": "Queen St, Melbourne VIC 3000, Australia",
+                    "img": "Queen Victoria Market.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97170554358144,
+                        -37.80325927465543
+                    ]
+                },
+                "properties": {
+                    "name": "Melbourne Museum",
+                    "address": "11 Nicholson St, Carlton VIC 3053, Australia",
+                    "img": "Melbourne Museum",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96529564044468,
+                        -37.80779807356778
+                    ]
+                },
+                "properties": {
+                    "name": "Old Melbourne Gaol",
+                    "address": "377 Russell St, Melbourne VIC 3000, Australia",
+                    "img": "Old Melbourne Gaol.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96520042658813,
+                        -37.80977477447491
+                    ]
+                },
+                "properties": {
+                    "name": "State Library Victoria",
+                    "address": "328 Swanston St, Melbourne VIC 3000, Australia",
+                    "img": "State Library Victoria.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.98007862658807,
+                        -37.81272147975254
+                    ]
+                },
+                "properties": {
+                    "name": "Fitzroy Gardens",
+                    "address": "Wellington Parade, East Melbourne VIC 3002, Australia",
+                    "img": "Fitzroy Gardens.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.98344929775286,
+                        -37.81991602882575
+                    ]
+                },
+                "properties": {
+                    "name": "Melbourne Cricket Ground",
+                    "address": "Brunton Ave, Richmond VIC 3002, Australia",
+                    "img": "Melbourne Cricket Ground.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9604439692804,
+                        -37.81922722928086
+                    ]
+                },
+                "properties": {
+                    "name": "Immigration Museum",
+                    "address": "400 Flinders St, Melbourne VIC 3000, Australia",
+                    "img": "Immigration Museum.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96871726891726,
+                        -37.81881457975146
+                    ]
+                },
+                "properties": {
+                    "name": "Yarra River Cruises",
+                    "address": "Berth 2, Federation Wharf, Princes Walk, Melbourne VIC 3000, Australia",
+                    "img": "Yarra River Cruises.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96904528241092,
+                        -37.817958916235355
+                    ]
+                },
+                "properties": {
+                    "name": "Fed Square",
+                    "address": "Swanston St & Flinders St, Melbourne VIC 3000, Australia",
+                    "img": "Fed Square.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9691588689173,
+                        -37.81652082648745
+                    ]
+                },
+                "properties": {
+                    "name": "Hosier Ln",
+                    "address": "Melbourne VIC, Australia",
+                    "img": "Hosier Ln.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.9724634977526,
+                        -37.81050907481201
+                    ]
+                },
+                "properties": {
+                    "name": "Princess Theatre",
+                    "address": "163 Spring St, Melbourne VIC 3000, Australia",
+                    "img": "Princess Theatre.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96753392658817,
+                        -37.81546362841735
+                    ]
+                },
+                "properties": {
+                    "name": "Regent Theatre",
+                    "address": "191 Collins St, Melbourne VIC 3000, Australia",
+                    "img": ".jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.96905336891723,
+                        -37.81760423059883
+                    ]
+                },
+                "properties": {
+                    "name": "Australian Centre for the Moving Image",
+                    "address": "Federation Square, Flinders St, Melbourne VIC 3000, Australia",
+                    "img": "Australian Centre for the Moving Image.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        144.97343011744616,
+                        -37.830495631311386
+                    ]
+                },
+                "properties": {
+                    "name": "Shrine of Remembrance",
+                    "address": "Birdwood Ave, Melbourne VIC 3001, Australia",
+                    "img": "Shrine of Remembrance.jpg",
+                    "rank": 0,
+                    "price": 0,
+                    "rating": 0.0
+                }
+            }
+        ]
+    }
+}
