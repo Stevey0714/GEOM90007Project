@@ -4,12 +4,13 @@ var map = new mapboxgl.Map({
     container: 'map', // container id
     //style: "mapbox://styles/stevey0714/ckubeyvwd0nm417oiqixxwt52/draft",
 	style: 'mapbox://styles/mapbox/streets-v11',
-    center: [145.309, -37.904], // starting position [lng, lat]
-    zoom: 10.0, // starting zoom
+    center: [144.965, -37.814], // starting position [lng, lat]
+    zoom: 14.0, // starting zoom
 });
 
 //var kps = new Array([143.90, -37.776], [146,-38], [147,-37]);
-var kps = new Array([143.90, -37.776], [146,-38], [147,-37]);
+var kps = new Array([-37.818177850892084, 144.96708325586758], [-37.82133317609602, 144.9647098543845], [-37.82256833310692, 144.96893478124707]);
+
 var counter = new Array();
 var route = new Array();
 var point = new Array();
@@ -276,7 +277,7 @@ function flyTo(x, y) {
 
 map.on('load',function(){
 	map.loadImage(
-        'https://i.postimg.cc/2y30tvfm/cafe-icon.png',
+        'https://i.postimg.cc/vmVYdYDk/landmark-icon.png',
         (error, image) => {
             if (error) throw error;
             map.addImage('custom-marker', image);
@@ -308,14 +309,6 @@ map.on('load',function(){
 	draw_line(kps[num], kps[num+1]);
 });
 
-document.getElementById('replay').addEventListener('click', function() {
-	num = 0;
-	for(var i = 0;i<kps.length-1;i++){
-		init(kps[i], kps[i+1], i)
-	}
-    draw_line(kps[num], kps[num+1]);
-});
-
 map.on('click', 'points', function (e) {
     var cafe_name = e.features[0].properties.name;
     var cafe_rank = e.features[0].properties.rank;
@@ -326,6 +319,16 @@ map.on('click', 'points', function (e) {
         cafe_rank.toString() + '<br><b>Price: </b>' + getMoney(cafe_price) + '<br><b>Rating: </b>' +
         getStars(cafe_rating) + '</div>';
     popup.setLngLat(e.lngLat).setHTML(outputString).addTo(map);
+});
+
+
+
+document.getElementById('replay').addEventListener('click', function() {
+	num = 0;
+	for(var i = 0;i<kps.length-1;i++){
+		init(kps[i], kps[i+1], i)
+	}
+    draw_line(kps[num], kps[num+1]);
 });
 
 
