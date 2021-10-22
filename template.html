@@ -10,46 +10,127 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet"/>
     <script type="text/javascript" src="Chart.js/Chart.min.js"></script>
     <script type="text/javascript" src="Chart.js/samples/utils.js"></script>
-</head>
-<body>
-<div class="container">
-    <h1 id="page_title">Template Title</h1>
+    <!-- FontAwesome Icons -->
+    <script defer src="js/fontawesome/js/all.js"></script>
+    <!-- Metro 4 Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+	<!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />-->
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+<style>
+.overlay {
+position: absolute;
+top: 10px;
+left: 10px;
+}
+ 
+.overlay button {
+font:600 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+background-color: #3386c0;
+color: #fff;
+display: inline-block;
+margin: 0;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+border-radius: 3px;
+}
+ 
+.overlay button:hover {
+background-color:#4ea0da;
+}
+</style>
+<script src='js/turf.min.js' charset='utf-8'></script>
 
+</head>
+<body onload="add_rankings();">
+<div class="container">
+    <h1 id="page_title">Travel in Melbourne</h1>
     <div class="navigation">
-        <a href="#" class="active">Landmarks</a> <!-- 当前页面 -->
-        <a href="hotels.html">Hotels</a> <!-- 其他页面 -->
+        <a href="template.html">Landmarks</a> <!-- 其他页面 -->
+        <a href="restaurants.html">Restaurants</a>
+        <a href="cafe.html">Cafes</a>
+        <a href="hotel.html" class="active">Hotels</a> <!-- 当前页面 -->
+    </div>
+
+
+    <div class="intro">
+        <p>Welcome to Melbourne! Colourful, lively Melbourne has broad appeal for every type of traveler,
+            from cozy cafes to local art to Australian and Aboriginal history to spectator sports. Melbourne
+            has been frequently rated as the top one in the list of the world's most livable cities and it is the most
+            sophisticated, stylish, and cosmopolitan city in Australia because of its world-class restaurants and
+            cafes.</p>
+
+        <p>This website will help you obtain rich information of popular landmarks, restaurants, cafes, and hotels in
+            Melbourne. Start your day with a "flat white" coffee before hopping on the free City Circle Tram loop to
+            check out singular attractions like the Royal Botanical Gardens and the Healesville Sanctuary, where animal
+            friends await. Melbourne is also a great starting point for daytrips to explore the Great Ocean Road and
+            Phillip Island. Hope you enjoy the trip!</p>
     </div>
 
     <div class="main_vision">
         <div id="map"></div>
+		<div id='overlay'>
+		<button id='replay'>Replay</button>
+	</div>
         <div id="filters">
-            <div class="transportation">
-                <h3>Transportation</h3>
-                <input type="checkbox" name="train">
-                <label for="train">Train</label><br>
-                <input type="checkbox" name="bus">
-                <label for="bus">Bus</label><br>
-                <input type="checkbox" name="walk">
-                <label for="walk">Walk</label><br>
-                <input type="checkbox" name="bicycle">
-                <label for="bicycle">Bicycle</label><br>
-                <input type="checkbox" name="fastest">
-                <label for="fastest">Fastest</label><br>
-                <input type="checkbox" name="lesswalk">
-                <label for="lesswalk">Less Walk</label><br>
-            </div>
             <div class="ratings">
                 <h3>Ratings</h3>
-                <input type="range" min="0" max="5" style="width: 200px">
+                <input data-role="doubleslider" data-hint="true"
+                       data-hint-always="false" data-min="0" data-max="5"
+                       data-accuracy="0.5" data-cls-complete="bg-lightOrange"
+                       data-cls-marker="bg-darkBrown border-50 custom-marker"
+                       onchange="rating_slider_change(this.value)">
             </div>
-            <div class="ratings">
+            <div class="price">
                 <h3>Price</h3>
-                <input type="range" min="0" max="5" style="width: 200px">
+                <input data-role="doubleslider" data-hint="true"
+                       data-hint-always="false" data-min="0" data-max="500"
+                       data-accuracy="10" data-cls-complete="bg-lightOrange"
+                       data-cls-marker="bg-darkBrown border-50 custom-marker"
+                       onchange="price_slider_change(this.value)">
             </div>
         </div>
+        <div id="rankings">
+        </div>
+    </div>
+
+    <div class="intro">
+        <p>It is definitely essential to stay at a great place when travelling. For first-time visitors to Melbourne,
+            one of the best places to stay is the city center or Southbank, where there are restaurants, cafes and a
+            lively calendar of events. These tourist-friendly areas are close to major attractions such as Federation
+            Square; the Royal Botanic Gardens; and the maze of alleyways and shopping malls around Flinders Street,
+            Collins Street and Bourke Street. Here are some of the highly rated hotels in Melbourne.</p>
     </div>
 </div>
 
-<script type="text/javascript" src="js/mapbox.js"></script>
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+<script type="text/javascript" src="data/landmark.geojson"></script>
+<script type="text/javascript" src="js/landmark_mapbox.js"></script>
+<script>
+map.on('load',function(){
+	num = 0;
+	for(var i = 0;i<kps.length-1;i++){
+		init(kps[i], kps[i+1], i)
+	}
+    draw_line(kps[num], kps[num+1]);
+	
+ });
+ 
+ document.getElementById('replay').addEventListener('click', function() {
+num = 0;
+	for(var i = 0;i<kps.length-1;i++){
+		init(kps[i], kps[i+1], i)
+	}
+    draw_line(kps[num], kps[num+1]);
+});
+</script>
 </body>
 </html>
