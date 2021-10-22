@@ -10,21 +10,32 @@ var map = new mapboxgl.Map({
 
 
 var kps_list = new Array();
-kps_list[0] = new Array([144.96708325586758, -37.818177850892084], [144.9647098543845, -37.82133317609602], [144.96893478124707, -37.82256833310692]);
+//kps_list[0] = new Array([144.96708325586758, -37.818177850892084], [144.9647098543845, -37.82133317609602], [144.96893478124707, -37.82256833310692]);
+kps_list[0] = new Array(
+    [-37.80757977975353, 144.95678499811552],
+    [-37.80612996948269, 144.95813901348365],
+    [-37.80695407174192, 144.96524482647158],
+    [-37.807675153674694, 144.96567508670753],
+    [-37.80779807356778, 144.96529564044468],
+    [-37.80785348479984, 144.96576584346803],
+    [-37.80889810317809, 144.9662743789407],
+    [-37.809340052658726, 144.96469065418287],
+    [-37.80977477447491, 144.96520042658813]
+);
 kps_list[1] = new Array([144.97708325586758, -37.838177850892084], [144.9247098543845, -37.81133317609602], [144.94893478124707, -37.84256833310692]);
 kps_list[2] = new Array([144.98708325586758, -37.888177850892084], [144.9847098543845, -37.88133317609602], [144.96293478124707, -37.82856833310692]);
 
 
 //reverse the coordinates
-/*
-for(var i = 0;i<3;i++){
+
+for(var i = 0;i<1;i++){
 	for(var j = 0;j<kps_list[i].length;j++){
 		var temp = kps_list[i][j][0];
 		kps_list[i][j][0] = kps_list[i][j][1];
 		kps_list[i][j][1] = temp;
 	}
 }
-*/
+
 //var kps = new Array([144.96708325586758, -37.818177850892084], [144.9647098543845, -37.82133317609602], [144.96893478124707, -37.82256833310692]);
 var kps_id = 0;
 var counter = new Array();
@@ -144,7 +155,7 @@ function animate() {
 	// Update point geometry to a new position based on counter denoting
 	// the index to access the arc.
 	point[num].features[0].geometry.coordinates = route[num].features[0].geometry.coordinates[counter[num]];
-	
+	flyTo(point[num].features[0].geometry.coordinates[0], point[num].features[0].geometry.coordinates[1])
 	// Calculate the bearing to ensure the icon is rotated to match the route arc
 	// The bearing is calculate between the current point and the next point, except
 	// at the end of the arc use the previous point and the current point
@@ -159,7 +170,7 @@ function animate() {
 	requestAnimationFrame(animate);
 	}
 	else{
-	if (num<=0){
+	if (num<=kps_list[kps_id].length-2){
 		num = num + 1;
 		draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);	
 	}
