@@ -186,7 +186,8 @@ function animate() {
 	// Update point geometry to a new position based on counter denoting
 	// the index to access the arc.
 	point[num].features[0].geometry.coordinates = route[num].features[0].geometry.coordinates[counter[num]];
-	//flyTo(point[num].features[0].geometry.coordinates[0], point[num].features[0].geometry.coordinates[1])
+	flyTo(point[num].features[0].geometry.coordinates[0], point[num].features[0].geometry.coordinates[1]);
+	
 	// Calculate the bearing to ensure the icon is rotated to match the route arc
 	// The bearing is calculate between the current point and the next point, except
 	// at the end of the arc use the previous point and the current point
@@ -201,6 +202,7 @@ function animate() {
 	}
 	else{
 		if (num<=kps_list[kps_id].length-2){
+			map.setZoom(14);
 			map.removeLayer('point'+(num).toString())
 			num = num + 1;
 			draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
