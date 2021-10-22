@@ -13,9 +13,9 @@ for index, row in landmard_df.iterrows():
     feature['properties']['address'] = row['addr']
     feature['properties']['img'] = row['img']
     feature['properties']['show'] = int(row['show']) 
-    feature['properties']['rank'] = int(0)
+    feature['properties']['rank'] = int(row['Rank'])
     feature['properties']['price'] = int(0)
-    feature['properties']['rating'] = float(0.0)
+    feature['properties']['rating'] = float(row['Rating'])
     feature['geometry']['coordinates'] = [float(coord) for coord in row['coor'].split(", ")][::-1]
     landmard_features.append(feature)
 landmard_output['data']['features'] = landmard_features

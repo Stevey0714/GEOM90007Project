@@ -323,14 +323,21 @@ map.on('load',function(){
 });
 
 map.on('click', 'points', function (e) {
-    var cafe_name = e.features[0].properties.name;
-    var cafe_rank = e.features[0].properties.rank;
-    var cafe_price = e.features[0].properties.price;
-    var cafe_rating = e.features[0].properties.rating;
+    var name = e.features[0].properties.name;
+    var rank = e.features[0].properties.rank;
+    var price = e.features[0].properties.price;
+    var rating = e.features[0].properties.rating;
+	var img = e.features[0].properties.img;
+	console.log(img)
     var popup = new mapboxgl.Popup({className: 'popup', anchor: 'bottom'});
-    var outputString = '<div><h3 style="margin: 0 auto">' + cafe_name + '</h3><br><b>Ranking: </b>' +
-        cafe_rank.toString() + '<br><b>Price: </b>' + getMoney(cafe_price) + '<br><b>Rating: </b>' +
-        getStars(cafe_rating) + '</div>';
+    var outputString = '<div align="center">' +
+		'<h3 style="margin: 0 auto">' + name + '</h3>' +
+		//'<img src=\'https://i.postimg.cc/VvsbKr4X/Eureka-Skydeck.jpg\' width=100><br>' +
+		'<img src=\'img/'+ img.toString() +'\' width=150><br>' +
+		'<b>Ranking: </b>' + rank.toString() + '<br>' +
+		//'<b>Price: </b>' + getMoney(price) + '<br>' +
+		'<b>Rating: </b>' + getStars(rating) + 
+		'</div>';
     popup.setLngLat(e.lngLat).setHTML(outputString).addTo(map);
 });
 

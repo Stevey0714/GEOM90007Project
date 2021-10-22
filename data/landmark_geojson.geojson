@@ -15,9 +15,9 @@ var landmark_data = {
                 "address": "Flinders St, Melbourne VIC 3000, Australia",
                 "img": "Flinders Street Station.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 1,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.9
             }
         },
         {
@@ -34,9 +34,9 @@ var landmark_data = {
                 "address": "7 Riverside Quay, Southbank VIC 3006, Australia",
                 "img": "Eureka Skydeck.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 2,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.9
             }
         },
         {
@@ -53,9 +53,9 @@ var landmark_data = {
                 "address": "180 St Kilda Rd, Melbourne VIC 3006, Australia",
                 "img": "National Gallery of Victoria.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 3,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.8
             }
         },
         {
@@ -72,9 +72,9 @@ var landmark_data = {
                 "address": "Flinders St, Melbourne VIC 3000, Australia",
                 "img": "St Paul's Cathedral.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 4,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.8
             }
         },
         {
@@ -91,9 +91,9 @@ var landmark_data = {
                 "address": "Spring St, East Melbourne VIC 3002, Australia",
                 "img": "Parliament House.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 5,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.7
             }
         },
         {
@@ -110,9 +110,9 @@ var landmark_data = {
                 "address": "231 Victoria Rd, Melbourne VIC 3078, Australia",
                 "img": "Bourke Street.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 6,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.7
             }
         },
         {
@@ -129,9 +129,9 @@ var landmark_data = {
                 "address": "Little Bourke St, Melbourne VIC 3000, Australia",
                 "img": "Chinatown.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 7,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -148,9 +148,9 @@ var landmark_data = {
                 "address": "Queen St, Melbourne VIC 3000, Australia",
                 "img": "Queen Victoria Market.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 8,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -165,11 +165,11 @@ var landmark_data = {
             "properties": {
                 "name": "Melbourne Museum",
                 "address": "11 Nicholson St, Carlton VIC 3053, Australia",
-                "img": "Melbourne Museum",
+                "img": "Melbourne Museum.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 9,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -186,9 +186,9 @@ var landmark_data = {
                 "address": "377 Russell St, Melbourne VIC 3000, Australia",
                 "img": "Old Melbourne Gaol.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 10,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -205,9 +205,9 @@ var landmark_data = {
                 "address": "328 Swanston St, Melbourne VIC 3000, Australia",
                 "img": "State Library Victoria.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 11,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -224,9 +224,9 @@ var landmark_data = {
                 "address": "Wellington Parade, East Melbourne VIC 3002, Australia",
                 "img": "Fitzroy Gardens.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 12,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -243,9 +243,9 @@ var landmark_data = {
                 "address": "Brunton Ave, Richmond VIC 3002, Australia",
                 "img": "Melbourne Cricket Ground.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 13,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -262,9 +262,9 @@ var landmark_data = {
                 "address": "400 Flinders St, Melbourne VIC 3000, Australia",
                 "img": "Immigration Museum.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 14,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -281,9 +281,9 @@ var landmark_data = {
                 "address": "Berth 2, Federation Wharf, Princes Walk, Melbourne VIC 3000, Australia",
                 "img": "Yarra River Cruises.jpg",
                 "show": 0,
-                "rank": 0,
+                "rank": 15,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -300,9 +300,9 @@ var landmark_data = {
                 "address": "Swanston St & Flinders St, Melbourne VIC 3000, Australia",
                 "img": "Fed Square.jpg",
                 "show": 0,
-                "rank": 0,
+                "rank": 16,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -319,9 +319,9 @@ var landmark_data = {
                 "address": "Melbourne VIC, Australia",
                 "img": "Hosier Ln.jpg",
                 "show": 0,
-                "rank": 0,
+                "rank": 17,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -338,9 +338,9 @@ var landmark_data = {
                 "address": "163 Spring St, Melbourne VIC 3000, Australia",
                 "img": "Princess Theatre.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 18,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -355,11 +355,11 @@ var landmark_data = {
             "properties": {
                 "name": "Regent Theatre",
                 "address": "191 Collins St, Melbourne VIC 3000, Australia",
-                "img": ".jpg",
+                "img": "Regent Theatre.jpg",
                 "show": 0,
-                "rank": 0,
+                "rank": 19,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         },
         {
@@ -376,9 +376,9 @@ var landmark_data = {
                 "address": "Birdwood Ave, Melbourne VIC 3001, Australia",
                 "img": "Shrine of Remembrance.jpg",
                 "show": 1,
-                "rank": 0,
+                "rank": 20,
                 "price": 0,
-                "rating": 0.0
+                "rating": 4.5
             }
         }
     ]
