@@ -315,7 +315,7 @@ var landmark_data = {
                 ]
             },
             "properties": {
-                "name": "Hosier Ln",
+                "name": "Hosier Lane",
                 "address": "Melbourne VIC, Australia",
                 "img": "Hosier Ln.jpg",
                 "show": 0,
@@ -377,6 +377,139 @@ var landmark_data = {
                 "img": "Shrine of Remembrance.jpg",
                 "show": 1,
                 "rank": 20,
+                "price": 0,
+                "rating": 4.5
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.9627822979446,
+                    -37.81019259442984
+                ]
+            },
+            "properties": {
+                "name": "Melbourne Central",
+                "address": "Swanston St, Melbourne VIC 3000, Australia",
+                "img": "Melbourne Central.jpg",
+                "show": 1,
+                "rank": 21,
+                "price": 0,
+                "rating": 4.5
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.93759607134047,
+                    -37.81190947738036
+                ]
+            },
+            "properties": {
+                "name": "Star Observation Wheel",
+                "address": "The District Docklands, 101 Waterfront Way, Docklands VIC 3008, Australia",
+                "img": "Star Observation Wheel.jpg",
+                "show": 1,
+                "rank": 22,
+                "price": 0,
+                "rating": 4.5
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.9716353075728,
+                    -37.804692660099576
+                ]
+            },
+            "properties": {
+                "name": "Royal Exhibition Building",
+                "address": "9 Nicholson St, Carlton VIC 3053, Australia",
+                "img": "Royal Exhibition Building.jpg",
+                "show": 1,
+                "rank": 23,
+                "price": 0,
+                "rating": 4.5
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.95669887996036,
+                    -37.81826314714916
+                ]
+            },
+            "properties": {
+                "name": "Collins Street",
+                "address": "Collins Street",
+                "img": "Collins Street.jpg",
+                "show": 1,
+                "rank": 24,
+                "price": 0,
+                "rating": 4.5
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.97942985435904,
+                    -37.814498748218355
+                ]
+            },
+            "properties": {
+                "name": "Cooks' Cottage",
+                "address": "Fitzroy Gardens, Wellington Parade, East Melbourne VIC 3002, Australia",
+                "img": "Cooks' Cottage.jpg",
+                "show": 1,
+                "rank": 25,
+                "price": 0,
+                "rating": 4.5
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.96908147813204,
+                    -37.81078254914415
+                ]
+            },
+            "properties": {
+                "name": "Museum of Chinese Australian History",
+                "address": "22 Cohen Pl, Melbourne VIC 3000, Australia",
+                "img": "Museum of Chinese Australian History.jpg",
+                "show": 1,
+                "rank": 26,
+                "price": 0,
+                "rating": 4.5
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.96096666926232,
+                    -37.79833652605378
+                ]
+            },
+            "properties": {
+                "name": "University of Melbourne",
+                "address": "Parkville VIC 3010, Australia",
+                "img": "University of Melbourne.jpg",
+                "show": 1,
+                "rank": 27,
                 "price": 0,
                 "rating": 4.5
             }
