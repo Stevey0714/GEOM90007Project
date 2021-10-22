@@ -21,32 +21,32 @@
 	<!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />-->
 <style>
-body { margin:0; padding:0; }
-#map { position:absolute; top:0; bottom:0; width:100%; }
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
 </style>
 <style>
-.overlay {
-position: absolute;
-top: 10px;
-left: 10px;
-}
- 
-.overlay button {
-font:600 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-background-color: #3386c0;
-color: #fff;
-display: inline-block;
-margin: 0;
-padding: 10px 20px;
-border: none;
-cursor: pointer;
-border-radius: 3px;
-}
- 
-.overlay button:hover {
-background-color:#4ea0da;
-}
+    .overlay {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .overlay button {
+        font:600 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        background-color: #3386c0;
+        color: #fff;
+        display: inline-block;
+        margin: 0;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    
+    .overlay button:hover {
+        background-color:#4ea0da;
+    }
 </style>
+
 <script src='js/turf.min.js' charset='utf-8'></script>
 
 </head>
@@ -112,25 +112,10 @@ background-color:#4ea0da;
 </div>
 
 <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
-<script type="text/javascript" src="data/landmark.geojson"></script>
+<script type="text/javascript" src="data/landmark_geojson.geojson"></script>
 <script type="text/javascript" src="js/landmark_mapbox.js"></script>
 <script>
-map.on('load',function(){
-	num = 0;
-	for(var i = 0;i<kps.length-1;i++){
-		init(kps[i], kps[i+1], i)
-	}
-    draw_line(kps[num], kps[num+1]);
-	
- });
- 
- document.getElementById('replay').addEventListener('click', function() {
-num = 0;
-	for(var i = 0;i<kps.length-1;i++){
-		init(kps[i], kps[i+1], i)
-	}
-    draw_line(kps[num], kps[num+1]);
-});
+
 </script>
 </body>
 </html>

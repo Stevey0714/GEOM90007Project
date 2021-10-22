@@ -5,9 +5,10 @@ var map = new mapboxgl.Map({
     //style: "mapbox://styles/stevey0714/ckubeyvwd0nm417oiqixxwt52/draft",
 	style: 'mapbox://styles/mapbox/streets-v11',
     center: [145.309, -37.904], // starting position [lng, lat]
-    zoom: 6.0, // starting zoom
+    zoom: 10.0, // starting zoom
 });
 
+//var kps = new Array([143.90, -37.776], [146,-38], [147,-37]);
 var kps = new Array([143.90, -37.776], [146,-38], [147,-37]);
 var counter = new Array();
 var route = new Array();
@@ -187,37 +188,145 @@ function draw_line(origin, destination){
 
 function animate() {
 
- 
-// Update the source with this new data.
-// Update point geometry to a new position based on counter denoting
-// the index to access the arc.
-point[num].features[0].geometry.coordinates = route[num].features[0].geometry.coordinates[counter[num]];
- 
-// Calculate the bearing to ensure the icon is rotated to match the route arc
-// The bearing is calculate between the current point and the next point, except
-// at the end of the arc use the previous point and the current point
-point[num].features[0].properties.bearing = turf.bearing(
-turf.point(route[num].features[0].geometry.coordinates[counter[num] >= steps[num] ? counter[num] - 1 : counter[num]]),
-turf.point(route[num].features[0].geometry.coordinates[counter[num] >= steps[num] ? counter[num] : counter[num] + 1])
-);
-map.getSource('point'+(num).toString()).setData(point[num]);
-console.log(num)
-// Request the next frame of animation so long the end has not been reached.
-if (counter[num] < steps[num]-2) {
-requestAnimationFrame(animate);
-}
-else{
-if (num<=0){
-	num = num + 1;
-	draw_line(kps[num], kps[num+1]);	
-}
-}
- 
-counter[num] = counter[num] + 1;
+	
+	// Update the source with this new data.
+	// Update point geometry to a new position based on counter denoting
+	// the index to access the arc.
+	point[num].features[0].geometry.coordinates = route[num].features[0].geometry.coordinates[counter[num]];
+	
+	// Calculate the bearing to ensure the icon is rotated to match the route arc
+	// The bearing is calculate between the current point and the next point, except
+	// at the end of the arc use the previous point and the current point
+	point[num].features[0].properties.bearing = turf.bearing(
+	turf.point(route[num].features[0].geometry.coordinates[counter[num] >= steps[num] ? counter[num] - 1 : counter[num]]),
+	turf.point(route[num].features[0].geometry.coordinates[counter[num] >= steps[num] ? counter[num] : counter[num] + 1])
+	);
+	map.getSource('point'+(num).toString()).setData(point[num]);
+	console.log(num)
+	// Request the next frame of animation so long the end has not been reached.
+	if (counter[num] < steps[num]-2) {
+	requestAnimationFrame(animate);
+	}
+	else{
+	if (num<=0){
+		num = num + 1;
+		draw_line(kps[num], kps[num+1]);	
+	}
+	}
+	
+	counter[num] = counter[num] + 1;
 
 }
- 
 
+function getStars(num){
+    var output = "<span>";
+    for (var i=0; i < 5; i++) {
+        if (num >= 1) {
+            output += '<i class="fas fa-star"></i>';
+            num--;
+        } else if (num === 0.5) {
+            output += '<i class="fas fa-star-half-alt"></i>';
+            num = 0;
+        } else {
+            output += '<i class="far fa-star"></i>';
+        }
+    }
+    output += "</span>"
+    return output;
+}
+
+function getMoney(num){
+    var output = "<span>";
+    while (num > 0) {
+        output += '<i class="fas fa-dollar-sign"></i>';
+        num--;
+    }
+    output += '</span>';
+    return output;
+}
+
+function rating_slider_change(values) {
+    var min, max;
+    min = parseFloat(values.split(", ")[0]);
+    max = parseFloat(values.split(', ')[1]);
+    map.setFilter('points', ['>', ['get', 'rating'], min], ["<=", ['get', 'rating'], max]);
+}
+
+function price_slider_change(values) {
+    var min, max;
+    min = parseFloat(values.split(", ")[0]);
+    max = parseFloat(values.split(', ')[1]);
+    map.setFilter('points', ['>', ['get', 'price'], min], ["<=", ['get', 'price'], max]);
+}
+
+function add_rankings() {
+    var ranking_list = document.getElementById('rankings');
+    var rank_list = "<h3>Rankings: </h3><div class='cards' style='overflow: auto; max-height: 320px;'>";
+    for (var data of landmark_data['features']) {
+        rank_list += '<div class="rankingCard" onclick="flyTo(' + data["geometry"]["coordinates"] + ')">' + data['properties']['rank'].toString() + '.\t' + data['properties']['name'] + '</div>';
+    }
+    rank_list += "</div>"
+    ranking_list.innerHTML = rank_list;
+}
+
+function flyTo(x, y) {
+    var coordinates = [x, y]
+    map.flyTo({center: coordinates});
+}
+
+map.on('load',function(){
+	map.loadImage(
+        'https://i.postimg.cc/2y30tvfm/cafe-icon.png',
+        (error, image) => {
+            if (error) throw error;
+            map.addImage('custom-marker', image);
+            map.addSource('points', {
+                'type': 'geojson',
+                'data': landmark_data,
+            });
+            map.addLayer({
+                'id': 'points',
+                'type': 'symbol',
+                'source': 'points',
+                'layout': {
+                    'icon-image': 'custom-marker',
+                    'text-field': ['get', 'name'],
+                    'text-font': [
+                        'Open Sans Semibold',
+                        'Arial Unicode MS Bold'
+                    ],
+                    'text-offset': [0, 1.25],
+                    'text-anchor': 'top'
+                }
+            });
+        });
+
+	num = 0;
+	for(var i = 0;i<kps.length-1;i++){
+		init(kps[i], kps[i+1], i)
+	}
+	draw_line(kps[num], kps[num+1]);
+});
+
+document.getElementById('replay').addEventListener('click', function() {
+	num = 0;
+	for(var i = 0;i<kps.length-1;i++){
+		init(kps[i], kps[i+1], i)
+	}
+    draw_line(kps[num], kps[num+1]);
+});
+
+map.on('click', 'points', function (e) {
+    var cafe_name = e.features[0].properties.name;
+    var cafe_rank = e.features[0].properties.rank;
+    var cafe_price = e.features[0].properties.price;
+    var cafe_rating = e.features[0].properties.rating;
+    var popup = new mapboxgl.Popup({className: 'popup', anchor: 'bottom'});
+    var outputString = '<div><h3 style="margin: 0 auto">' + cafe_name + '</h3><br><b>Ranking: </b>' +
+        cafe_rank.toString() + '<br><b>Price: </b>' + getMoney(cafe_price) + '<br><b>Rating: </b>' +
+        getStars(cafe_rating) + '</div>';
+    popup.setLngLat(e.lngLat).setHTML(outputString).addTo(map);
+});
 
 
  /*
