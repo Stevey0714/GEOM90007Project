@@ -4,62 +4,19 @@ var map = new mapboxgl.Map({
     container: 'map', // container id
     //style: "mapbox://styles/stevey0714/ckubeyvwd0nm417oiqixxwt52/draft",
 	style: 'mapbox://styles/mapbox/streets-v11',
-    center: [144.967, -37.814], // starting position [lng, lat]
+    center: [144.967, -37.815], // starting position [lng, lat]
     zoom: 14, // starting zoom
 });
 
 
 var kps_list = new Array();
-kps_list[0] = new Array(
-        [-37.80757977975353, 144.95678499811552],
-        [-37.80612996948269, 144.95813901348365],
-        [-37.80695407174192, 144.96524482647158],
-        [-37.807675153674694, 144.96567508670753],
-        [-37.80779807356778, 144.96529564044468],
-        [-37.80785348479984, 144.96576584346803],
-        [-37.80889810317809, 144.9662743789407],
-        [-37.809340052658726, 144.96469065418287],
-        [-37.80977477447491, 144.96520042658813],
-        [-37.80924911562555, 144.9649008912683],
-        [-37.8081628213721, 144.9686670539484],
-        [-37.8101653687934, 144.96962353972583],
-        [-37.80941914284959, 144.9721223589456],
-        [-37.810382623030705, 144.9726006018256],
-        [-37.811034381906765, 144.97383207724167],
-        [-37.81156269672188, 144.97312244331658],
-        [-37.810367554663316, 144.97251089969535],
-        //[-37.81146098325727, 144.96874507844882],
-    
-        [-37.81148494364177, 144.96872316269267],
-        [-37.81182072494798, 144.9676122711999],
-        [-37.81279926993943, 144.96806208871934],
-        [-37.81390140508393, 144.96430057120187],
-        [-37.814314479752305, 144.96449432695124],
-    
-        [-37.81482942814499, 144.96496015988444],
-        [-37.81450311138831, 144.9660759587723],
-        [-37.81554138697127, 144.96655339195027],
-        [-37.81530406812541, 144.9673419613566],
-        [-37.81546362841735, 144.96753392658817],
-    
-        [-37.81624865481848, 144.9677793808237],
-        [-37.81647325730021, 144.96698544699967],
-        [-37.81747760343392, 144.96737168507622],
-        [-37.818261577206606, 144.96705518443014],
-    
-        [-37.818307731443696, 144.96774659700372],
-        [-37.820053631213575, 144.96854053082777],
-        [-37.82059603826831, 144.9679075295356],
-        [-37.82091809057115, 144.967800241181],
-        [-37.821994413071465, 144.96523604950605],
-        [-37.82132489147144, 144.96468887889753]
-    );
+kps_list[0] = new Array([144.96708325586758, -37.818177850892084], [144.9647098543845, -37.82133317609602], [144.96893478124707, -37.82256833310692]);
 kps_list[1] = new Array([144.97708325586758, -37.838177850892084], [144.9247098543845, -37.81133317609602], [144.94893478124707, -37.84256833310692]);
 kps_list[2] = new Array([144.98708325586758, -37.888177850892084], [144.9847098543845, -37.88133317609602], [144.96293478124707, -37.82856833310692]);
 
 
 //reverse the coordinates
-
+/*
 for(var i = 0;i<3;i++){
 	for(var j = 0;j<kps_list[i].length;j++){
 		var temp = kps_list[i][j][0];
@@ -67,7 +24,7 @@ for(var i = 0;i<3;i++){
 		kps_list[i][j][1] = temp;
 	}
 }
-
+*/
 //var kps = new Array([144.96708325586758, -37.818177850892084], [144.9647098543845, -37.82133317609602], [144.96893478124707, -37.82256833310692]);
 var kps_id = 0;
 var counter = new Array();
@@ -116,7 +73,7 @@ function init(origin, destination, index){
 	// Number of steps to use in the arc and animation, more steps means
 	// a smoother arc and animation, but too many steps will result in a
 	// low frame rate
-	
+	//adjust speed
 	steps[index] = parseInt(100*(lineDistance/0.4));
 	 
 	// Draw an arc between the `origin` & `destination` of the two points
@@ -189,7 +146,7 @@ function animate() {
 	// Update point geometry to a new position based on counter denoting
 	// the index to access the arc.
 	point[num].features[0].geometry.coordinates = route[num].features[0].geometry.coordinates[counter[num]];
-	//flyTo(point[num].features[0].geometry.coordinates[0], point[num].features[0].geometry.coordinates[1])
+	flyTo(point[num].features[0].geometry.coordinates[0], point[num].features[0].geometry.coordinates[1])
 	// Calculate the bearing to ensure the icon is rotated to match the route arc
 	// The bearing is calculate between the current point and the next point, except
 	// at the end of the arc use the previous point and the current point
@@ -205,6 +162,7 @@ function animate() {
 	}
 	else{
 	if (num<=kps_list[kps_id].length-2){
+		map.removeLayer('point'+(num).toString())
 		num = num + 1;
 		draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);	
 	}
@@ -339,9 +297,10 @@ map.on('click', 'points', function (e) {
 
 
 document.getElementById('replay0').addEventListener('click', function() {
+	map.removeLayer("point"+(num).toString());
 	for(var i = 0;i<=num;i++){
 		map.removeLayer("route"+(i).toString());
-		map.removeLayer("point"+(i).toString());
+		//map.removeLayer("point"+(i).toString());
 		
 	}
 	for(var i = 0;i<=num;i++){
@@ -356,9 +315,10 @@ document.getElementById('replay0').addEventListener('click', function() {
     draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 });
 document.getElementById('replay1').addEventListener('click', function() {
+	map.removeLayer("point"+(num).toString());
 	for(var i = 0;i<=num;i++){
 		map.removeLayer("route"+(i).toString());
-		map.removeLayer("point"+(i).toString());
+		//map.removeLayer("point"+(i).toString());
 		
 	}
 	for(var i = 0;i<=num;i++){
@@ -373,9 +333,10 @@ document.getElementById('replay1').addEventListener('click', function() {
     draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 });
 document.getElementById('replay2').addEventListener('click', function() {
+	map.removeLayer("point"+(num).toString());
 	for(var i = 0;i<=num;i++){
 		map.removeLayer("route"+(i).toString());
-		map.removeLayer("point"+(i).toString());
+		//map.removeLayer("point"+(i).toString());
 		
 	}
 	for(var i = 0;i<=num;i++){
