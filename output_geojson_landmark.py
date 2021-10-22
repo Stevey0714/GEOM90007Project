@@ -12,6 +12,7 @@ for index, row in landmard_df.iterrows():
     feature['properties']['name'] = row['name']
     feature['properties']['address'] = row['addr']
     feature['properties']['img'] = row['img']
+    feature['properties']['show'] = int(row['show']) 
     feature['properties']['rank'] = int(0)
     feature['properties']['price'] = int(0)
     feature['properties']['rating'] = float(0.0)

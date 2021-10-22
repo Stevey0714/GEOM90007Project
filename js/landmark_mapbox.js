@@ -4,8 +4,8 @@ var map = new mapboxgl.Map({
     container: 'map', // container id
     //style: "mapbox://styles/stevey0714/ckubeyvwd0nm417oiqixxwt52/draft",
 	style: 'mapbox://styles/mapbox/streets-v11',
-    center: [144.965, -37.814], // starting position [lng, lat]
-    zoom: 14.0, // starting zoom
+    center: [144.967, -37.815], // starting position [lng, lat]
+    zoom: 14, // starting zoom
 });
 
 //var kps = new Array([143.90, -37.776], [146,-38], [147,-37]);
@@ -296,8 +296,21 @@ map.on('load',function(){
                         'Open Sans Semibold',
                         'Arial Unicode MS Bold'
                     ],
+					"text-size": {
+						"stops": [
+							[0, 0],
+							[13.2, 0],
+							[13.599, 0],
+							[13.6, 6],
+							[13.8, 8],
+							[14, 12]
+						]
+					},
                     'text-offset': [0, 1.25],
-                    'text-anchor': 'top'
+                    'text-anchor': 'top',
+					'text-allow-overlap': false,
+					'icon-allow-overlap': true,
+
                 }
             });
         });
