@@ -54,7 +54,7 @@ kps_list[0] = new Array(
         [-37.821994413071465, 144.96523604950605],
         [-37.82132489147144, 144.96468887889753]
     );
-kps_list[1] = new Array(
+kps_list[2] = new Array(
 	[-37.79833652605378, 144.96096666926232],
 	[-37.798509253491645, 144.96423725824502],
 	[-37.800432168543715, 144.96395646111478],
@@ -76,7 +76,7 @@ kps_list[1] = new Array(
 	[-37.81146692752627, 144.96874509833017], // chinatown
 	
 );
-kps_list[2] = new Array(
+kps_list[1] = new Array(
 	[-37.821596804108026, 144.96470892695132],
 	[-37.82127475475487, 144.9644514348828],
 	[-37.821673078734456, 144.96297085558928],
@@ -163,7 +163,6 @@ function init(origin, destination, index){
 	 
 	// Calculate the distance in kilometers between route start/end point.
 	var lineDistance = turf.lineDistance(route[index].features[0], 'kilometers');
-	console.log(lineDistance);
 	 
 	var arc = [];
 	 
@@ -262,13 +261,13 @@ function animate() {
 			draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 			if (kps_id == 0) {
 				if (num == 1) { idx=17; map.flyTo({center: [point[idx].features[0].geometry.coordinates[0], point[idx].features[0].geometry.coordinates[1]], zoom: 14, speed: 0.3 }); }
-				if (num == 18) { idx=28; map.flyTo({center: [point[idx].features[0].geometry.coordinates[0], point[idx].features[0].geometry.coordinates[1]], zoom: 14, speed: 0.1 }); }
+				if (num == 18) { idx=28; map.flyTo({center: [point[idx].features[0].geometry.coordinates[0], point[idx].features[0].geometry.coordinates[1]], speed: 0.1 }); }
 			}
-			else if (kps_id == 1) {
+			else if (kps_id == 2) {
 				if (num == 1) { idx=3; map.flyTo({center: [point[idx].features[0].geometry.coordinates[0], point[idx].features[0].geometry.coordinates[1]], zoom: 14, speed: 0.5 }); }
 				if (num == 5) { idx=9; map.flyTo({center: [point[idx].features[0].geometry.coordinates[0], point[idx].features[0].geometry.coordinates[1]], zoom: 14, speed: 0.1 }); }
 			}
-			else if (kps_id == 2) {
+			else if (kps_id == 1) {
 				if (num == 1) { idx=3; map.flyTo({center: [point[idx].features[0].geometry.coordinates[0], point[idx].features[0].geometry.coordinates[1]], zoom: 14, speed: 0.3 }); }
 				if (num == 7) { idx=10; map.flyTo({center: [point[idx].features[0].geometry.coordinates[0], point[idx].features[0].geometry.coordinates[1]], zoom: 15.5, speed: 0.3 }); }
 				if (num == 18) { idx=28; map.flyTo({center: [point[idx].features[0].geometry.coordinates[0], point[idx].features[0].geometry.coordinates[1]], zoom: 14, speed: 0.3 }); }
@@ -380,7 +379,7 @@ map.on('load',function(){
 	for(var i = 0;i<kps_list[kps_id].length-1;i++){
 		init(kps_list[kps_id][i], kps_list[kps_id][i+1], i)
 	}
-	draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
+	//draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 });
 
 map.on('click', 'points', function (e) {
@@ -389,8 +388,7 @@ map.on('click', 'points', function (e) {
     var price = e.features[0].properties.price;
     var rating = e.features[0].properties.rating;
 	var img = e.features[0].properties.img;
-	console.log(img)
-    var popup = new mapboxgl.Popup({className: 'popup', anchor: 'bottom'});
+	var popup = new mapboxgl.Popup({className: 'popup', anchor: 'bottom'});
     var outputString = '<div align="center">' +
 		'<h3 style="margin: 0 auto">' + name + '</h3>' +
 		//'<img src=\'https://i.postimg.cc/VvsbKr4X/Eureka-Skydeck.jpg\' width=100><br>' +
@@ -405,15 +403,17 @@ map.on('click', 'points', function (e) {
 
 
 document.getElementById('replay0').addEventListener('click', function() {
-	map.removeLayer("point"+(num).toString());
-	for(var i = 0;i<=num;i++){
-		map.removeLayer("route"+(i).toString());
-		//map.removeLayer("point"+(i).toString());
-		
-	}
-	for(var i = 0;i<=num;i++){
-		map.removeSource("route"+(i).toString());
-		map.removeSource("point"+(i).toString());
+	if (map.getLayer("point"+(num).toString())) {
+		map.removeLayer("point"+(num).toString());
+		for(var i = 0;i<=num;i++){
+			map.removeLayer("route"+(i).toString());
+			//map.removeLayer("point"+(i).toString());
+			
+		}
+		for(var i = 0;i<=num;i++){
+			map.removeSource("route"+(i).toString());
+			map.removeSource("point"+(i).toString());
+		}
 	}
 	num = 0;
 	kps_id = 0;
@@ -423,15 +423,17 @@ document.getElementById('replay0').addEventListener('click', function() {
     draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 });
 document.getElementById('replay1').addEventListener('click', function() {
-	map.removeLayer("point"+(num).toString());
-	for(var i = 0;i<=num;i++){
-		map.removeLayer("route"+(i).toString());
-		//map.removeLayer("point"+(i).toString());
-		
-	}
-	for(var i = 0;i<=num;i++){
-		map.removeSource("route"+(i).toString());
-		map.removeSource("point"+(i).toString());
+	if (map.getLayer("point"+(num).toString())) {
+		map.removeLayer("point"+(num).toString());
+		for(var i = 0;i<=num;i++){
+			map.removeLayer("route"+(i).toString());
+			//map.removeLayer("point"+(i).toString());
+			
+		}
+		for(var i = 0;i<=num;i++){
+			map.removeSource("route"+(i).toString());
+			map.removeSource("point"+(i).toString());
+		}
 	}
 	num = 0;
 	kps_id = 1;
@@ -441,15 +443,17 @@ document.getElementById('replay1').addEventListener('click', function() {
     draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 });
 document.getElementById('replay2').addEventListener('click', function() {
-	map.removeLayer("point"+(num).toString());
-	for(var i = 0;i<=num;i++){
-		map.removeLayer("route"+(i).toString());
-		//map.removeLayer("point"+(i).toString());
-		
-	}
-	for(var i = 0;i<=num;i++){
-		map.removeSource("route"+(i).toString());
-		map.removeSource("point"+(i).toString());
+	if (map.getLayer("point"+(num).toString())) {
+		map.removeLayer("point"+(num).toString());
+		for(var i = 0;i<=num;i++){
+			map.removeLayer("route"+(i).toString());
+			//map.removeLayer("point"+(i).toString());
+			
+		}
+		for(var i = 0;i<=num;i++){
+			map.removeSource("route"+(i).toString());
+			map.removeSource("point"+(i).toString());
+		}
 	}
 	num = 0;
 	kps_id = 2;
@@ -458,23 +462,3 @@ document.getElementById('replay2').addEventListener('click', function() {
 	}
     draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 });
-
-
- /*
-document.getElementById('replay').addEventListener('click', function() {
-// Set the coordinates of the original point back to origin
-point.features[0].geometry.coordinates = origin;
- 
-// Update the source layer
-map.getSource('point').setData(point);
- 
-// Reset the counter
-counter = 0;
- 
-// Restart the animation.
-animate(counter);
-});
- */
-// Start the animation.
-//animate(counter);
-
