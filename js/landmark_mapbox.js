@@ -208,15 +208,16 @@ function draw_line(origin, destination){
 	"data": point[num]
 	});
 	
-	
-	 
+	clr = "#007cbf"
+	if(kps_id==1) { clr = "#f25050" }
+	if(kps_id==2) { clr = "#2c6100" }
 	map.addLayer({
 	"id": "route"+(num).toString(),
 	"source": "route"+(num).toString(),
 	"type": "line",
 	"paint": {
 	"line-width": 4,
-	"line-color": "#007cbf"
+	"line-color": clr
 	}
 	});
 	 
