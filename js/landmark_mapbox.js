@@ -277,7 +277,7 @@ function flyTo(x, y) {
 
 map.on('load',function(){
 	map.loadImage(
-        'https://i.postimg.cc/vmVYdYDk/landmark-icon.png',
+        'https://i.postimg.cc/7YkyL8tp/landmark-icon.png',
         (error, image) => {
             if (error) throw error;
             map.addImage('custom-marker', image);

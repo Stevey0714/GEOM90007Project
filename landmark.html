@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet"/>
+    <script type="text/javascript" src="Chart.js/Chart.min.js"></script>
+    <script type="text/javascript" src="Chart.js/samples/utils.js"></script>
+    <!-- FontAwesome Icons -->
+    <script defer src="js/fontawesome/js/all.js"></script>
+    <!-- Metro 4 Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+
+</head>
+<body onload="add_rankings();">
+<div class="container">
+    <h1 id="page_title">Travel in Melbourne</h1>
+
+    <div class="navigation">
+        <a href="landmark.html" class="active">Landmarks</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="cafe.html">Cafes</a>
+        <a href="hotel.html">Hotels</a>
+    </div>
+
+    <div class="intro">
+        <p>Welcome to Melbourne! Colourful, lively Melbourne has broad appeal for every type of traveler,
+            from cozy cafes to local art to Australian and Aboriginal history to spectator sports. Melbourne
+            has been frequently rated as the top one in the list of the world's most livable cities and it is the most
+            sophisticated, stylish, and cosmopolitan city in Australia because of its world-class restaurants and
+            cafes.</p>
+
+        <p>This website will help you obtain rich information of popular landmarks, restaurants, cafes, and hotels in
+            Melbourne. Start your day with a "flat white" coffee before hopping on the free City Circle Tram loop to
+            check out singular attractions like the Royal Botanical Gardens and the Healesville Sanctuary, where animal
+            friends await. Melbourne is also a great starting point for daytrips to explore the Great Ocean Road and
+            Phillip Island. Hope you enjoy the trip!</p>
+    </div>
+
+    <div class="main_vision">
+        <div id="map"></div>
+        <div id="filters">
+            <div class="ratings">
+                <h3>Ratings</h3>
+                <input data-role="doubleslider" data-hint="true"
+                       data-hint-always="false" data-min="0" data-max="5"
+                       data-accuracy="0.5" data-cls-complete="bg-lightBrown"
+                       data-cls-marker="bg-darkSteel border-50 custom-marker"
+                       onchange="rating_slider_change(this.value)">
+            </div>
+            <div class="price">
+                <h3>Price</h3>
+                <input data-role="doubleslider" data-hint="true"
+                       data-hint-always="false" data-min="0" data-max="5"
+                       data-accuracy="0" data-cls-complete="bg-lightBrown"
+                       data-cls-marker="bg-darkSteel border-50 custom-marker"
+                       onchange="price_slider_change(this.value)">
+            </div>
+        </div>
+        <div id="rankings">
+        </div>
+    </div>
+
+    <div class="intro">
+        <p>Melbourne is a city known for its fabulous coffee and amazing cafe culture. Our city streets are filled
+            with endless cafes. From the hidden gems of the CBD and suburban roasters to the chic and trendy cafes of
+            Church Street, Melbourne offers a plethora of incredible locations where you can sample the best beers and
+            consume the most delicious dishes. Walk into one of these great spots for a coffee and we guarantee you'll
+            want to stay all day.</p>
+    </div>
+</div>
+
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+<script type="text/javascript" src="data/landmark_geojson.geojson"></script>
+<script type="text/javascript" src="js/landmark_mapbox.js"></script>
+</body>
+</html>
