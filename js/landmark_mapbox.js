@@ -8,83 +8,33 @@ var map = new mapboxgl.Map({
     zoom: 14, // starting zoom
 });
 
-//var kps = new Array([143.90, -37.776], [146,-38], [147,-37]);
-var kps = new Array([-37.818177850892084, 144.96708325586758], [-37.82133317609602, 144.9647098543845], [-37.82256833310692, 144.96893478124707]);
 
+var kps_list = new Array();
+kps_list[0] = new Array([144.96708325586758, -37.818177850892084], [144.9647098543845, -37.82133317609602], [144.96893478124707, -37.82256833310692]);
+kps_list[1] = new Array([144.97708325586758, -37.838177850892084], [144.9247098543845, -37.81133317609602], [144.94893478124707, -37.84256833310692]);
+kps_list[2] = new Array([144.98708325586758, -37.888177850892084], [144.9847098543845, -37.88133317609602], [144.96293478124707, -37.82856833310692]);
+
+
+//reverse the coordinates
+/*
+for(var i = 0;i<3;i++){
+	for(var j = 0;j<kps_list[i].length;j++){
+		var temp = kps_list[i][j][0];
+		kps_list[i][j][0] = kps_list[i][j][1];
+		kps_list[i][j][1] = temp;
+	}
+}
+*/
+//var kps = new Array([144.96708325586758, -37.818177850892084], [144.9647098543845, -37.82133317609602], [144.96893478124707, -37.82256833310692]);
+var kps_id = 0;
 var counter = new Array();
 var route = new Array();
 var point = new Array();
 var steps = new Array();
-//var counter2;
-//var route2;
-//var point2;
-//var steps2;
+
 var num;
-function init2(origin, destination){
-// San Francisco
-	//var origin = [143.90, -37.776];
-	 
-	// Washington DC
-	//var destination = [146, -38];
-	 
-	// A simple line from origin to destination.
-	route2 = {
-	"type": "FeatureCollection",
-	"features": [{
-	"type": "Feature",
-	"geometry": {
-	"type": "LineString",
-	"coordinates": [
-	origin,
-	destination
-	]
-	}
-	}]
-	};
-	 
-	// A single point that animates along the route.
-	// Coordinates are initially set to origin.
-	point2 = {
-	"type": "FeatureCollection",
-	"features": [{
-	"type": "Feature",
-	"properties": {},
-	"geometry": {
-	"type": "Point",
-	"coordinates": origin
-	}
-	}]
-	};
-	 
-	// Calculate the distance in kilometers between route start/end point.
-	var lineDistance = turf.lineDistance(route2.features[0], 'kilometers');
-	 
-	var arc = [];
-	 
-	// Number of steps to use in the arc and animation, more steps means
-	// a smoother arc and animation, but too many steps will result in a
-	// low frame rate
-	steps2 = 500;
-	 
-	// Draw an arc between the `origin` & `destination` of the two points
-	for (var i = 0; i < lineDistance; i += lineDistance / steps2) {
-	var segment = turf.along(route2.features[0], i, 'kilometers');
-	arc.push(segment.geometry.coordinates);
-	}
-	 
-	// Update the route with calculated arc coordinates
-	route2.features[0].geometry.coordinates = arc;
-	 
-	// Used to increment the value of the point measurement against the route.
-	counter2 = 0;
-}
+
 function init(origin, destination, index){
-// San Francisco
-	//var origin = [143.90, -37.776];
-	 
-	// Washington DC
-	//var destination = [146, -38];
-	 
 	// A simple line from origin to destination.
 	route[index] = {
 	"type": "FeatureCollection",
@@ -122,7 +72,7 @@ function init(origin, destination, index){
 	// Number of steps to use in the arc and animation, more steps means
 	// a smoother arc and animation, but too many steps will result in a
 	// low frame rate
-	steps[index] = 500;
+	steps[index] = 100;
 	 
 	// Draw an arc between the `origin` & `destination` of the two points
 	for (var i = 0; i < lineDistance; i += lineDistance / steps[index]) {
@@ -167,7 +117,7 @@ function draw_line(origin, destination){
 	"source": "route"+(num).toString(),
 	"type": "line",
 	"paint": {
-	"line-width": 2,
+	"line-width": 4,
 	"line-color": "#007cbf"
 	}
 	});
@@ -211,7 +161,7 @@ function animate() {
 	else{
 	if (num<=0){
 		num = num + 1;
-		draw_line(kps[num], kps[num+1]);	
+		draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);	
 	}
 	}
 	
@@ -316,10 +266,10 @@ map.on('load',function(){
         });
 
 	num = 0;
-	for(var i = 0;i<kps.length-1;i++){
-		init(kps[i], kps[i+1], i)
+	for(var i = 0;i<kps_list[kps_id].length-1;i++){
+		init(kps_list[kps_id][i], kps_list[kps_id][i+1], i)
 	}
-	draw_line(kps[num], kps[num+1]);
+	draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 });
 
 map.on('click', 'points', function (e) {
@@ -343,12 +293,56 @@ map.on('click', 'points', function (e) {
 
 
 
-document.getElementById('replay').addEventListener('click', function() {
-	num = 0;
-	for(var i = 0;i<kps.length-1;i++){
-		init(kps[i], kps[i+1], i)
+document.getElementById('replay0').addEventListener('click', function() {
+	for(var i = 0;i<=num;i++){
+		map.removeLayer("route"+(i).toString());
+		map.removeLayer("point"+(i).toString());
+		
 	}
-    draw_line(kps[num], kps[num+1]);
+	for(var i = 0;i<=num;i++){
+		map.removeSource("route"+(i).toString());
+		map.removeSource("point"+(i).toString());
+	}
+	num = 0;
+	kps_id = 0;
+	for(var i = 0;i<kps_list[kps_id].length-1;i++){
+		init(kps_list[kps_id][i], kps_list[kps_id][i+1], i)
+	}
+    draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
+});
+document.getElementById('replay1').addEventListener('click', function() {
+	for(var i = 0;i<=num;i++){
+		map.removeLayer("route"+(i).toString());
+		map.removeLayer("point"+(i).toString());
+		
+	}
+	for(var i = 0;i<=num;i++){
+		map.removeSource("route"+(i).toString());
+		map.removeSource("point"+(i).toString());
+	}
+	num = 0;
+	kps_id = 1;
+	for(var i = 0;i<kps_list[kps_id].length-1;i++){
+		init(kps_list[kps_id][i], kps_list[kps_id][i+1], i)
+	}
+    draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
+});
+document.getElementById('replay2').addEventListener('click', function() {
+	for(var i = 0;i<=num;i++){
+		map.removeLayer("route"+(i).toString());
+		map.removeLayer("point"+(i).toString());
+		
+	}
+	for(var i = 0;i<=num;i++){
+		map.removeSource("route"+(i).toString());
+		map.removeSource("point"+(i).toString());
+	}
+	num = 0;
+	kps_id = 2;
+	for(var i = 0;i<kps_list[kps_id].length-1;i++){
+		init(kps_list[kps_id][i], kps_list[kps_id][i+1], i)
+	}
+    draw_line(kps_list[kps_id][num], kps_list[kps_id][num+1]);
 });
 
 
