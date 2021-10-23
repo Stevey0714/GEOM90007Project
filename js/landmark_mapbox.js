@@ -218,6 +218,10 @@ function draw_line(origin, destination){
 	"paint": {
 	"line-width": 4,
 	"line-color": clr
+	},
+	"layout":{
+		'line-cap': 'round',
+		'line-join': 'round'
 	}
 	});
 	 
